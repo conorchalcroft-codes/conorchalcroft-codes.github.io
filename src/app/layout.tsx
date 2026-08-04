@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og.png",
-        width: 1376,
-        height: 768,
+        width: 1536,
+        height: 1024,
         alt: `${site.name} — personal research lab`,
       },
     ],
