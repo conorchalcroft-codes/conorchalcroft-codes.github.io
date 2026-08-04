@@ -19,7 +19,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deploy
 
-The site is set up for [GitHub Pages](https://conorchalcroft.github.io) via static export and GitHub Actions.
+The site is set up for [GitHub Pages](https://conorchalcroft-codes.github.io) via static export and GitHub Actions.
 
 1. Push to `main`
 2. In the repo: **Settings → Pages → Source → GitHub Actions**
