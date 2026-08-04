@@ -37,6 +37,20 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.name,
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1376,
+        height: 768,
+        alt: `${site.name} — personal research lab`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+    images: ["/og.png"],
   },
 };
 

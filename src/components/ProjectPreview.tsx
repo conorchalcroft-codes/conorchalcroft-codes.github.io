@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProjectIcon } from "@/components/ProjectIcons";
 import type { Project } from "@/data/projects";
 
 type ProjectPreviewProps = {
@@ -8,10 +9,16 @@ type ProjectPreviewProps = {
 
 export function ProjectPreview({ project, index }: ProjectPreviewProps) {
   return (
-    <article className="group grid gap-3 border-t border-rule py-10 first:border-t-0 first:pt-0 sm:grid-cols-[4rem_1fr] sm:gap-8">
-      <span className="font-mono text-xs tracking-widest text-muted">
-        {String(index + 1).padStart(2, "0")}
-      </span>
+    <article className="group grid gap-4 border-t border-rule py-10 first:border-t-0 first:pt-0 sm:grid-cols-[4rem_1fr] sm:gap-8">
+      <div className="flex items-start gap-3 sm:flex-col sm:items-start sm:gap-4">
+        <span className="font-mono text-xs tracking-widest text-muted">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <ProjectIcon
+          id={project.icon}
+          className="h-9 w-9 text-accent transition-colors group-hover:text-ink"
+        />
+      </div>
       <div className="space-y-4">
         <div className="space-y-2">
           <p className="text-sm text-accent">{project.theme}</p>

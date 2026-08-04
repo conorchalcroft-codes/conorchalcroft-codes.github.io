@@ -1,9 +1,12 @@
+export type ProjectIconId = "footynomics" | "agora" | "first-principles";
+
 export type Project = {
   slug: string;
   title: string;
   theme: string;
   summary: string;
   questions: string[];
+  icon: ProjectIconId;
 };
 
 export const projects: Project[] = [
@@ -18,6 +21,7 @@ export const projects: Project[] = [
       "How should uncertainty shape what we trust?",
       "Where do Bayesian and ML approaches diverge?",
     ],
+    icon: "footynomics",
   },
   {
     slug: "agora",
@@ -30,6 +34,7 @@ export const projects: Project[] = [
       "How do we keep reasoning transparent?",
       "What happens when evidence conflicts?",
     ],
+    icon: "agora",
   },
   {
     slug: "first-principles",
@@ -42,5 +47,6 @@ export const projects: Project[] = [
       "When do hybrid models outperform pure ML?",
       "What does scientific trust look like in a learned model?",
     ],
+    icon: "first-principles",
   },
 ];

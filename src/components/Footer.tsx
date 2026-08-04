@@ -1,5 +1,26 @@
-import Link from "next/link";
+import { EmailIcon, GitHubIcon, LinkedInIcon } from "@/components/SocialIcons";
 import { site } from "@/data/site";
+
+const socialLinks = [
+  {
+    label: "GitHub",
+    href: site.links.github,
+    Icon: GitHubIcon,
+    external: true,
+  },
+  {
+    label: "LinkedIn",
+    href: site.links.linkedin,
+    Icon: LinkedInIcon,
+    external: true,
+  },
+  {
+    label: "Email",
+    href: `mailto:${site.links.email}`,
+    Icon: EmailIcon,
+    external: false,
+  },
+] as const;
 
 export function Footer() {
   return (
@@ -9,29 +30,20 @@ export function Footer() {
           <p className="font-serif text-foreground">{site.name}</p>
           <p>Exploring ideas and building things I find interesting.</p>
         </div>
-        <div className="flex flex-wrap gap-x-5 gap-y-2">
-          <a
-            href={site.links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-underline text-foreground"
-          >
-            GitHub
-          </a>
-          <a
-            href={site.links.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-underline text-foreground"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={`mailto:${site.links.email}`}
-            className="link-underline text-foreground"
-          >
-            Email
-          </a>
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+          {socialLinks.map(({ label, href, Icon, external }) => (
+            <a
+              key={label}
+              href={href}
+              className="inline-flex items-center gap-2 text-foreground link-underline"
+              {...(external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+            >
+              <Icon className="h-4 w-4" />
+              <span>{label}</span>
+            </a>
+          ))}
         </div>
       </div>
     </footer>

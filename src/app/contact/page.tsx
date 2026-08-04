@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EmailIcon, GitHubIcon, LinkedInIcon } from "@/components/SocialIcons";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -11,16 +12,22 @@ const contacts = [
     label: "Email",
     href: `mailto:${site.links.email}`,
     value: site.links.email,
+    Icon: EmailIcon,
+    external: false,
   },
   {
     label: "GitHub",
     href: site.links.github,
     value: "conorchalcroft-codes",
+    Icon: GitHubIcon,
+    external: true,
   },
   {
     label: "LinkedIn",
     href: site.links.linkedin,
     value: "conorchalcroft",
+    Icon: LinkedInIcon,
+    external: true,
   },
 ] as const;
 
@@ -41,22 +48,23 @@ export default function ContactPage() {
       </header>
 
       <ul className="divide-y divide-rule border-y border-rule">
-        {contacts.map((contact) => (
+        {contacts.map(({ label, href, value, Icon, external }) => (
           <li
-            key={contact.label}
-            className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+            key={label}
+            className="flex flex-col gap-3 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8"
           >
-            <span className="font-mono text-xs tracking-[0.15em] text-muted uppercase">
-              {contact.label}
+            <span className="inline-flex items-center gap-2.5 font-mono text-xs tracking-[0.15em] text-muted uppercase">
+              <Icon className="h-4 w-4 text-accent" />
+              {label}
             </span>
             <a
-              href={contact.href}
+              href={href}
               className="font-serif text-xl text-ink link-underline"
-              {...(contact.href.startsWith("http")
+              {...(external
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
             >
-              {contact.value}
+              {value}
             </a>
           </li>
         ))}

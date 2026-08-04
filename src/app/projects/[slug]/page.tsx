@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ProjectIcon } from "@/components/ProjectIcons";
 import { projects } from "@/data/projects";
 
 type ProjectPageProps = {
@@ -30,6 +31,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-16 sm:px-8 sm:py-24">
+      <ProjectIcon id={project.icon} className="mb-6 h-11 w-11 text-accent" />
       <p className="font-mono text-xs tracking-[0.2em] text-accent uppercase">
         {project.theme}
       </p>
