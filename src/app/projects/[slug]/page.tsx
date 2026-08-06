@@ -40,6 +40,19 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </h1>
       <p className="mt-8 text-lg leading-relaxed text-muted">{project.summary}</p>
 
+      {project.demoUrl ? (
+        <p className="mt-8">
+          <a
+            href={project.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex text-base text-accent link-underline"
+          >
+            Open live demo →
+          </a>
+        </p>
+      ) : null}
+
       <section className="mt-14 space-y-4 border-t border-rule pt-10">
         <h2 className="font-serif text-2xl text-ink">Questions this explores</h2>
         <ul className="space-y-3 text-base leading-relaxed text-foreground/85">
@@ -57,8 +70,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="mt-14 space-y-4 border-t border-rule pt-10">
         <h2 className="font-serif text-2xl text-ink">Status</h2>
         <p className="leading-relaxed text-muted">
-          Exploration underway. Deeper notes — motivation, approach, and what
-          I&apos;m learning — will land here as the project takes shape.
+          {project.demoUrl ? (
+            <>
+              Live demo available. Deeper notes — motivation, approach, and what
+              I&apos;m learning — will land here as the project takes shape.
+            </>
+          ) : (
+            <>
+              Exploration underway. Deeper notes — motivation, approach, and what
+              I&apos;m learning — will land here as the project takes shape.
+            </>
+          )}
         </p>
       </section>
 

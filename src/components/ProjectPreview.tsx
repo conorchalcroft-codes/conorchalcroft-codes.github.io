@@ -44,12 +44,24 @@ export function ProjectPreview({ project, index }: ProjectPreviewProps) {
             </li>
           ))}
         </ul>
-        <Link
-          href={`/projects/${project.slug}`}
-          className="inline-flex text-sm text-ink link-underline"
-        >
-          Notes in progress
-        </Link>
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+          {project.demoUrl ? (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex text-sm text-accent link-underline"
+            >
+              Open live demo →
+            </a>
+          ) : null}
+          <Link
+            href={`/projects/${project.slug}`}
+            className="inline-flex text-sm text-ink link-underline"
+          >
+            {project.demoUrl ? "Project notes" : "Notes in progress"}
+          </Link>
+        </div>
       </div>
     </article>
   );

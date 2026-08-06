@@ -7,6 +7,7 @@ export type Project = {
   summary: string;
   questions: string[];
   icon: ProjectIconId;
+  demoUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -35,6 +36,7 @@ export const projects: Project[] = [
       "What happens when evidence conflicts?",
     ],
     icon: "agora",
+    demoUrl: "https://agora-ai.streamlit.app/",
   },
   {
     slug: "first-principles",
