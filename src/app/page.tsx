@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { ExternalAppLink } from "@/components/ExternalAppLink";
 import { ProjectPreview } from "@/components/ProjectPreview";
-import { projects } from "@/data/projects";
+import { projects, projectsWithApps } from "@/data/projects";
 import { site } from "@/data/site";
 
 export default function Home() {
@@ -22,24 +23,18 @@ export default function Home() {
             {site.tagline}
           </p>
           <div className="fade-up-delay-3 mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
-            <Link
-              href="/projects"
-              className="text-ink link-underline"
-            >
+            <Link href="/projects" className="text-ink link-underline">
               Explore projects
             </Link>
-            <Link
-              href="/writing"
-              className="text-muted link-underline hover:text-ink"
-            >
-              Read notes
-            </Link>
-            <Link
-              href="/about"
-              className="text-muted link-underline hover:text-ink"
-            >
-              About this space
-            </Link>
+            {projectsWithApps.map((project) => (
+              <ExternalAppLink
+                key={project.slug}
+                href={project.appUrl}
+                className="text-accent link-underline"
+              >
+                Open {project.title} →
+              </ExternalAppLink>
+            ))}
           </div>
         </div>
       </section>
@@ -51,12 +46,13 @@ export default function Home() {
               Current explorations
             </p>
             <h2 className="font-serif text-3xl tracking-tight text-ink sm:text-4xl">
-              Three laboratories for asking better questions
+              Three laboratories, at different stages
             </h2>
             <p className="text-base leading-relaxed text-muted">
-              Each project starts from curiosity — not a deliverable. The aim is
-              depth: understanding uncertainty, reasoning, and the meeting point
-              of data and scientific principle.
+              Agora is live. Footynomics is open and still being built. First
+              Principles is scaffolding. Each starts from curiosity — not a
+              deliverable — and asks better questions about uncertainty,
+              reasoning, and scientific principle.
             </p>
           </div>
 

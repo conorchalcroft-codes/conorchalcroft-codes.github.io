@@ -7,10 +7,22 @@ export const metadata: Metadata = {
 };
 
 const upcomingNotes = [
-  "Building a hierarchical Bayesian football model",
-  "Understanding physics-informed neural networks",
-  "Designing multi-agent AI systems",
-  "Lessons from implementing ML projects",
+  {
+    title: "Designing a council of language models",
+    lab: "Agora",
+  },
+  {
+    title: "A walk-forward football modelling league",
+    lab: "Footynomics",
+  },
+  {
+    title: "Building a hierarchical Bayesian football model",
+    lab: "Footynomics",
+  },
+  {
+    title: "Physics-informed neural networks, when I get there",
+    lab: "First Principles",
+  },
 ];
 
 export default function WritingPage() {
@@ -25,18 +37,23 @@ export default function WritingPage() {
         </h1>
         <p className="text-lg leading-relaxed text-muted">
           Longer-form thinking on the work above — methods, mistakes, and the
-          ideas that stuck. Nothing published yet; these are the threads in
-          progress.
+          ideas that stuck. Nothing published yet; these are the threads I want
+          to pull on next.
         </p>
       </header>
 
       <ul className="divide-y divide-rule border-y border-rule">
-        {upcomingNotes.map((title) => (
+        {upcomingNotes.map(({ title, lab }) => (
           <li
             key={title}
-            className="flex items-baseline justify-between gap-6 py-5"
+            className="flex flex-col gap-2 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
           >
-            <span className="font-serif text-xl text-ink">{title}</span>
+            <div className="space-y-1">
+              <span className="font-serif text-xl text-ink">{title}</span>
+              <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
+                {lab}
+              </p>
+            </div>
             <span className="shrink-0 font-mono text-xs tracking-wide text-muted">
               Soon
             </span>

@@ -5,7 +5,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Personal research projects exploring machine learning, AI reasoning, and scientific computing.",
+    "Personal research labs exploring football modelling, multi-agent reasoning, and scientific machine learning.",
 };
 
 export default function ProjectsPage() {
@@ -16,11 +16,12 @@ export default function ProjectsPage() {
           Projects
         </p>
         <h1 className="font-serif text-4xl tracking-tight text-ink sm:text-5xl">
-          Explorations in progress
+          Labs at different stages
         </h1>
         <p className="text-lg leading-relaxed text-muted">
-          These are laboratories more than finished products — spaces to test
-          ideas, compare approaches, and sit with uncertainty.
+          Agora is finished and open. Footynomics is a working lab still in
+          progress. First Principles hasn&apos;t left the scaffolding stage.
+          They&apos;re places to test ideas — not polished products.
         </p>
       </header>
 

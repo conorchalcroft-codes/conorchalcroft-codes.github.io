@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { ExternalAppLink } from "@/components/ExternalAppLink";
 import { ProjectIcon } from "@/components/ProjectIcons";
+import { StatusBadge } from "@/components/StatusBadge";
 import type { Project } from "@/data/projects";
 
 type ProjectPreviewProps = {
@@ -21,7 +23,10 @@ export function ProjectPreview({ project, index }: ProjectPreviewProps) {
       </div>
       <div className="space-y-4">
         <div className="space-y-2">
-          <p className="text-sm text-accent">{project.theme}</p>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            <StatusBadge status={project.status} />
+            <p className="text-sm text-accent">{project.theme}</p>
+          </div>
           <h3 className="font-serif text-3xl tracking-tight text-ink sm:text-4xl">
             <Link
               href={`/projects/${project.slug}`}
@@ -45,21 +50,19 @@ export function ProjectPreview({ project, index }: ProjectPreviewProps) {
           ))}
         </ul>
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-          {project.demoUrl ? (
-            <a
-              href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+          {project.appUrl ? (
+            <ExternalAppLink
+              href={project.appUrl}
               className="inline-flex text-sm text-accent link-underline"
             >
-              Open live demo →
-            </a>
+              Open the app →
+            </ExternalAppLink>
           ) : null}
           <Link
             href={`/projects/${project.slug}`}
             className="inline-flex text-sm text-ink link-underline"
           >
-            {project.demoUrl ? "Project notes" : "Notes in progress"}
+            More about this lab
           </Link>
         </div>
       </div>

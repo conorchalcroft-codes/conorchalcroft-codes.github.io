@@ -26,6 +26,24 @@ export default function AboutPage() {
           learning, AI, statistics, and scientific computing.
         </p>
         <p>
+          Two of the labs are now things you can open:{" "}
+          <Link href="/projects/agora" className="text-ink link-underline">
+            Agora
+          </Link>
+          , a finished multi-agent reasoning app, and{" "}
+          <Link href="/projects/footynomics" className="text-ink link-underline">
+            Footynomics
+          </Link>
+          , a football modelling lab still in progress.{" "}
+          <Link
+            href="/projects/first-principles"
+            className="text-ink link-underline"
+          >
+            First Principles
+          </Link>{" "}
+          is still an empty bench.
+        </p>
+        <p>
           The work is driven by curiosity: comparing modelling approaches,
           making uncertainty visible, and asking whether systems can reason more
           carefully when they collaborate.
