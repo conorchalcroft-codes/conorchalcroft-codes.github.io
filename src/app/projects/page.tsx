@@ -16,12 +16,11 @@ export default function ProjectsPage() {
           Projects
         </p>
         <h1 className="font-serif text-4xl tracking-tight text-ink sm:text-5xl">
-          Labs at different stages
+          Projects
         </h1>
         <p className="text-lg leading-relaxed text-muted">
-          Agora is finished and open. Footynomics is a working lab still in
-          progress. First Principles hasn&apos;t left the scaffolding stage.
-          They&apos;re places to test ideas — not polished products.
+          Two of these have apps you can open. First Principles doesn&apos;t,
+          yet.
         </p>
       </header>
 

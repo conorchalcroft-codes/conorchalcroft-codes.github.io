@@ -3,24 +3,24 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Writing",
   description:
-    "Notes and essays on Bayesian modelling, scientific ML, and multi-agent reasoning.",
+    "Notes on Bayesian modelling, scientific ML, and multi-agent apps.",
 };
 
 const upcomingNotes = [
   {
-    title: "Designing a council of language models",
+    title: "How Agora actually works",
     lab: "Agora",
   },
   {
-    title: "A walk-forward football modelling league",
+    title: "Scoring football models without leaking the future",
     lab: "Footynomics",
   },
   {
-    title: "Building a hierarchical Bayesian football model",
+    title: "A hierarchical Bayesian football model",
     lab: "Footynomics",
   },
   {
-    title: "Physics-informed neural networks, when I get there",
+    title: "Physics-informed neural networks",
     lab: "First Principles",
   },
 ];
@@ -36,9 +36,8 @@ export default function WritingPage() {
           Notes from the lab
         </h1>
         <p className="text-lg leading-relaxed text-muted">
-          Longer-form thinking on the work above — methods, mistakes, and the
-          ideas that stuck. Nothing published yet; these are the threads I want
-          to pull on next.
+          I&apos;ll write some of this up properly at some point. Nothing
+          published yet, but these are on the list.
         </p>
       </header>
 

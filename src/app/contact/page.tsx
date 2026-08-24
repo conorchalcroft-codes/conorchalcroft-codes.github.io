@@ -4,7 +4,7 @@ import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch about research, experiments, or shared questions.",
+  description: "Get in touch about the projects, or just to say hi.",
 };
 
 const contacts = [
@@ -39,11 +39,11 @@ export default function ContactPage() {
           Contact
         </p>
         <h1 className="font-serif text-4xl tracking-tight text-ink sm:text-5xl">
-          Start a conversation
+          Get in touch
         </h1>
         <p className="text-lg leading-relaxed text-muted">
-          Curious about a project, want to compare notes, or just say hello?
-          I&apos;d like to hear from you.
+          If you want to chat about any of this, or just say hi, you can reach
+          me here.
         </p>
       </header>
 

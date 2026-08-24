@@ -62,7 +62,7 @@ export function ProjectPreview({ project, index }: ProjectPreviewProps) {
             href={`/projects/${project.slug}`}
             className="inline-flex text-sm text-ink link-underline"
           >
-            More about this lab
+            Read more
           </Link>
         </div>
       </div>

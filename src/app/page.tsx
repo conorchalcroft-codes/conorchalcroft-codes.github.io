@@ -46,13 +46,13 @@ export default function Home() {
               Current explorations
             </p>
             <h2 className="font-serif text-3xl tracking-tight text-ink sm:text-4xl">
-              Three laboratories, at different stages
+              What I&apos;m working on
             </h2>
             <p className="text-base leading-relaxed text-muted">
-              Agora is live. Footynomics is open and still being built. First
-              Principles is scaffolding. Each starts from curiosity — not a
-              deliverable — and asks better questions about uncertainty,
-              reasoning, and scientific principle.
+              Footynomics sits where football and data science overlap. Agora is
+              a small agentic app about reasoning together, which I built mainly
+              so I could actually deploy one. First Principles will be scientific
+              ML, when I get there.
             </p>
           </div>
 

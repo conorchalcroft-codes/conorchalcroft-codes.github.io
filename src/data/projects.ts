@@ -2,16 +2,22 @@ export type ProjectIconId = "footynomics" | "agora" | "first-principles";
 
 export type ProjectStatus = "live" | "wip" | "planned";
 
+export type ProjectFeature = {
+  name: string;
+  detail: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
   theme: string;
   summary: string;
   overview: string[];
+  features?: ProjectFeature[];
   questions: string[];
   icon: ProjectIconId;
   status: ProjectStatus;
-  statusNote: string;
+  statusNote?: string;
   appUrl?: string;
 };
 
@@ -27,21 +33,47 @@ export const projects: Project[] = [
     title: "Footynomics",
     theme: "Football through Bayesian modelling and statistics",
     summary:
-      "A Premier League analytics lab: competing model philosophies, walk-forward evaluation, and an app that tries to explain the results — open to try, still being built.",
+      "Football and data science in the same place. I built it to try out modelling methods on Premier League data, and to actually learn them by having to make them work.",
     overview: [
-      "Footynomics started from a simple itch: football models are usually asked to pick a winner. I wanted a place to ask why they pick it, how sure they are, and what happens when different modelling philosophies disagree.",
-      "The lab pulls together public match, xG, odds, Elo and player data, then runs a walk-forward prediction league — Bayesian, classical, and machine-learning approaches scored over time, not on a shuffled test set. The app is built to show the argument, not just the table: insight first, then the explanation, then the technical layer if you want it.",
-      "It is a working product with unfinished rooms. Expect new views, models that haven't settled, and an honest comparison against the market rather than a tipster's certainty.",
+      "I started Footynomics because I wanted to spend time at the intersection of football and data science. I like the sport, I like the methods, and building something around both felt like a better way to learn the techniques than reading papers and never touching a dataset.",
+      "There's a Premier League database behind it, pulled together from a few public sources: matches, expected goals, odds, Elo ratings, player stats. On top of that sits a Streamlit app with several pages, rather than one big dashboard. Different modelling approaches have to live in the same place and get scored the same way, walking forward through the season. The bookmakers stay in as a baseline, so nothing gets to look clever for free.",
+      "The point is as much the methods as the football. Bayesian models, older statistical ones, machine learning, a stacked blend. I wanted to see how they behave next to each other, where they disagree, and what you can actually trust once you look at calibration rather than a lucky weekend.",
+    ],
+    features: [
+      {
+        name: "Modelling league",
+        detail:
+          "A walk-forward 1X2 league of competing model philosophies: hierarchical Bayesian, classical football models, a few ML approaches, and a stacked blend. Scored with proper metrics, and compared with the closing odds so the whole thing stays honest.",
+      },
+      {
+        name: "Club School",
+        detail:
+          "Slower pages that walk through how each modelling approach actually thinks about a match. Useful if you want the method, not just a probability.",
+      },
+      {
+        name: "Matches and seasons",
+        detail:
+          "Match-level 1X2 probabilities and scorelines, with the uncertainty left in, plus Monte Carlo projections of how the table might finish.",
+      },
+      {
+        name: "Teams and players",
+        detail:
+          "Form, player lookalikes from per-90 profiles, and a Best Buys view that looks at market value alongside on-pitch numbers.",
+      },
+      {
+        name: "Maps and archetypes",
+        detail:
+          "Clustering and lower-dimensional views of the league, for when I'm more interested in structure than in a Saturday result.",
+      },
     ],
     questions: [
-      "Why do models make the predictions they do?",
-      "How should uncertainty shape what we trust?",
-      "Where do Bayesian and ML approaches diverge?",
+      "What do you actually learn by putting different methods on the same league table?",
+      "How should uncertainty change what you trust?",
+      "Where do Bayesian and machine learning approaches part company?",
     ],
     icon: "footynomics",
     status: "wip",
-    statusNote:
-      "The app is live and usable, but the lab is still in active development — new models, clearer explanations, and plenty of rough edges.",
+    statusNote: "Still a work in progress, though there's already a fair bit to click through.",
     appUrl: "https://footynomics.streamlit.app/",
   },
   {
@@ -49,21 +81,19 @@ export const projects: Project[] = [
     title: "Agora",
     theme: "Collaborative AI reasoning",
     summary:
-      "A live multi-agent reasoning lab: specialised personas deliberate, challenge each other, and synthesise — with you as the human in the loop.",
+      "An agentic app I built to get some practice actually deploying one. A few specialised agents try to reason toward an answer together, rather than debate for the sake of it.",
     overview: [
-      "Most language-model tools give you one voice. Agora is a council. Specialised personas open independently, reply, challenge one another, and a moderator synthesises — with you able to step in at any point.",
-      "You can pause between rounds, address the whole table or a single speaker, run another lap of deliberation, and ask questions after the verdict. Confidence shifts are tracked so you can see who moved, and by how much, as the discussion unfolds.",
-      "The point is not a cleverer chatbot. It is whether disagreement, evidence, and a human moderator can produce a more careful answer than a single confident reply.",
+      "Agora was mainly a way to deploy an agentic app end to end, instead of leaving the idea in a notebook. You give a question to a small council of language-model personas. They take it in turns, then a moderator pulls a synthesis together. You can step in if you want: pause between rounds, talk to everyone or just one speaker, send them round again, ask follow-ups.",
+      "The interesting part, for me, was getting agents to work a question together rather than argue. They're supposed to be heading toward an answer, not winning a debate.",
+      "The output is a bit gimmicky. That's on purpose. It's meant to be fun to poke at, not a serious attempt at automated truth. Confidence scores shift as they go, which is part of the theatre, and there are a few domain packs if you want a more specific council.",
     ],
     questions: [
-      "Can diverse agents produce more balanced answers?",
-      "How do we keep reasoning transparent?",
-      "What happens when evidence conflicts?",
+      "What happens if agents have to work a question together instead of answering alone?",
+      "How much of a multi-agent setup is useful, and how much is just a nice show?",
+      "What do you actually learn by deploying one of these, rather than diagramming it?",
     ],
     icon: "agora",
     status: "live",
-    statusNote:
-      "Agora is done and open to use. Notes on the protocol, prompting, and what the deliberations actually look like will land here over time.",
     appUrl: "https://agora-ai.streamlit.app/",
   },
   {
@@ -71,21 +101,19 @@ export const projects: Project[] = [
     title: "First Principles",
     theme: "Scientific machine learning",
     summary:
-      "A future lab for scientific machine learning — physics-informed models, neural operators, and hybrid approaches that try to respect the laws they approximate.",
+      "Scientific machine learning: models that try to respect physical laws, not just fit the data. No app yet.",
     overview: [
-      "First Principles is the lab I haven't built yet. The question is how machine learning can take on physical knowledge — so a model is not only fitting data, but trying to obey the laws it approximates.",
-      "The territory I want to work in: physics-informed neural networks, neural operators, Bayesian scientific ML, and hybrid models that sit between simulation and learning.",
-      "There is no app to open. This page is a marker for a project still in the scaffolding stage.",
+      "This is the one I haven't built. The idea is to look at scientific machine learning, physics-informed neural networks, neural operators, that kind of thing, and ask how much it helps when a model has to obey the physics as well as the data.",
+      "It'll happen when it happens. For now this page is just a marker so I don't forget.",
     ],
     questions: [
-      "How do we blend data with physical laws?",
-      "When do hybrid models outperform pure ML?",
-      "What does scientific trust look like in a learned model?",
+      "How do you blend data with physical laws?",
+      "When do hybrid models actually beat plain machine learning?",
+      "What would it take to trust a learned model in a scientific setting?",
     ],
     icon: "first-principles",
     status: "planned",
-    statusNote:
-      "Scaffolding only — no lab yet. The questions are ready; the work is not.",
+    statusNote: "Not available yet.",
   },
 ];
 

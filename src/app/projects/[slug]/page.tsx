@@ -57,7 +57,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       ) : null}
 
       <section className="mt-14 space-y-5 border-t border-rule pt-10">
-        <h2 className="font-serif text-2xl text-ink">In the lab</h2>
+        <h2 className="font-serif text-2xl text-ink">About</h2>
         {project.overview.map((paragraph) => (
           <p key={paragraph} className="leading-relaxed text-muted">
             {paragraph}
@@ -65,8 +65,22 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         ))}
       </section>
 
+      {project.features && project.features.length > 0 ? (
+        <section className="mt-14 space-y-8 border-t border-rule pt-10">
+          <h2 className="font-serif text-2xl text-ink">What&apos;s in the app</h2>
+          <ul className="space-y-7">
+            {project.features.map((feature) => (
+              <li key={feature.name} className="space-y-2">
+                <p className="font-serif text-xl text-ink">{feature.name}</p>
+                <p className="leading-relaxed text-muted">{feature.detail}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       <section className="mt-14 space-y-4 border-t border-rule pt-10">
-        <h2 className="font-serif text-2xl text-ink">Questions this explores</h2>
+        <h2 className="font-serif text-2xl text-ink">Things I&apos;m interested in</h2>
         <ul className="space-y-3 text-base leading-relaxed text-foreground/85">
           {project.questions.map((question) => (
             <li key={question} className="flex gap-3">
@@ -79,10 +93,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </ul>
       </section>
 
-      <section className="mt-14 space-y-4 border-t border-rule pt-10">
-        <h2 className="font-serif text-2xl text-ink">Status</h2>
-        <p className="leading-relaxed text-muted">{project.statusNote}</p>
-      </section>
+      {project.statusNote ? (
+        <section className="mt-14 space-y-4 border-t border-rule pt-10">
+          <h2 className="font-serif text-2xl text-ink">Status</h2>
+          <p className="leading-relaxed text-muted">{project.statusNote}</p>
+        </section>
+      ) : null}
 
       <p className="mt-16">
         <Link href="/projects" className="text-sm text-ink link-underline">

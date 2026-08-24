@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About this personal research lab exploring machine learning, AI, and scientific computing.",
+    "About this personal site for projects in machine learning, AI, and scientific computing.",
 };
 
 export default function AboutPage() {
@@ -15,42 +15,40 @@ export default function AboutPage() {
           About
         </p>
         <h1 className="font-serif text-4xl tracking-tight text-ink sm:text-5xl">
-          A space for exploration
+          About this site
         </h1>
       </header>
 
       <div className="space-y-6 text-lg leading-relaxed text-muted">
         <p>
-          This site is where I explore things I&apos;m interested in and build
-          projects around them — a digital garden at the intersection of machine
-          learning, AI, statistics, and scientific computing.
+          This is a personal site for projects I&apos;m building in and around
+          machine learning, statistics and scientific computing. I like exploring
+          ideas by actually making something, then seeing where it goes.
         </p>
         <p>
-          Two of the labs are now things you can open:{" "}
-          <Link href="/projects/agora" className="text-ink link-underline">
-            Agora
-          </Link>
-          , a finished multi-agent reasoning app, and{" "}
           <Link href="/projects/footynomics" className="text-ink link-underline">
             Footynomics
-          </Link>
-          , a football modelling lab still in progress.{" "}
+          </Link>{" "}
+          is the football one: using data science to understand the game, and
+          using the game to learn the methods.{" "}
+          <Link href="/projects/agora" className="text-ink link-underline">
+            Agora
+          </Link>{" "}
+          is an agentic app I built to get some hands-on experience deploying
+          that kind of system. The agents try to reason toward an answer
+          together rather than debate for the sake of it. It&apos;s a bit of
+          fun, not super serious.{" "}
           <Link
             href="/projects/first-principles"
             className="text-ink link-underline"
           >
             First Principles
           </Link>{" "}
-          is still an empty bench.
+          will be about scientific machine learning. That one isn&apos;t
+          available yet.
         </p>
         <p>
-          The work is driven by curiosity: comparing modelling approaches,
-          making uncertainty visible, and asking whether systems can reason more
-          carefully when they collaborate.
-        </p>
-        <p>
-          Expect unfinished edges, open questions, and writing that prioritises
-          understanding over polish. If something here resonates,{" "}
+          If something here is interesting,{" "}
           <Link href="/contact" className="text-ink link-underline">
             say hello
           </Link>
