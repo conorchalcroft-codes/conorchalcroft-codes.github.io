@@ -43,7 +43,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 py-20 sm:px-8 sm:py-28">
           <div className="mb-14 max-w-2xl space-y-4">
             <p className="font-mono text-xs tracking-[0.2em] text-muted uppercase">
-              Current explorations
+              Projects
             </p>
             <h2 className="font-serif text-3xl tracking-tight text-ink sm:text-4xl">
               What I&apos;m working on
