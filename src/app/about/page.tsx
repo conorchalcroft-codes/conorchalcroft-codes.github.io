@@ -44,8 +44,8 @@ export default function AboutPage() {
           >
             First Principles
           </Link>{" "}
-          will be about scientific machine learning. That one isn&apos;t
-          available yet.
+          will be a deep dive into physics-informed machine learning. That one
+          isn&apos;t available yet.
         </p>
         <p>
           If something here is interesting,{" "}

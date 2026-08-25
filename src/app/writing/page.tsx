@@ -8,19 +8,19 @@ export const metadata: Metadata = {
 
 const upcomingNotes = [
   {
-    title: "How Agora actually works",
-    lab: "Agora",
-  },
-  {
-    title: "Scoring football models without leaking the future",
-    lab: "Footynomics",
-  },
-  {
     title: "A hierarchical Bayesian football model",
     lab: "Footynomics",
   },
   {
-    title: "Physics-informed neural networks",
+    title: "Putting Bayesian and ML models on the same fixtures",
+    lab: "Footynomics",
+  },
+  {
+    title: "A council of agents, not a debate",
+    lab: "Agora",
+  },
+  {
+    title: "When physics-informed ML beats a classic model",
     lab: "First Principles",
   },
 ];

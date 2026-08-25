@@ -51,8 +51,8 @@ export default function Home() {
             <p className="text-base leading-relaxed text-muted">
               Footynomics sits where football and data science overlap. Agora is
               a small agentic app about reasoning together, which I built mainly
-              so I could actually deploy one. First Principles will be scientific
-              ML, when I get there.
+              so I could actually deploy one. First Principles will be a deep
+              dive into physics-informed ML, when I get there.
             </p>
           </div>
 

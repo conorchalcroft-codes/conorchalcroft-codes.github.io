@@ -19,8 +19,8 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="text-lg leading-relaxed text-muted">
-          Two of these have apps you can open. First Principles doesn&apos;t,
-          yet.
+          Footynomics and Agora both have apps you can open. First Principles
+          is the next one I want to build.
         </p>
       </header>
 
